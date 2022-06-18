@@ -12,7 +12,7 @@ particlesJS.load('particles-js', 'particles.json', function() {
 /* Otherwise just put the config content (json): */
 
 particlesJS.load('particles-js', 'particles.json', function() {
-  console.log('particles.js loaded - callback');
+  console.log('click to create more particles 👇');
 });
 
 particlesJS('particles-js',
