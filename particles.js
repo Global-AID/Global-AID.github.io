@@ -6,6 +6,10 @@
 /* How to use? : Check the GitHub README
 /* v2.0.0
 /* ----------------------------------------------- */
+/* particlesJS.load(@dom-id, @path-json, @callback (optional)); */
+particlesJS.load('particles-js', 'particles.json', function() {
+  console.log('callback - particles.js config loaded');
+});
 
 var pJS = function(tag_id, params){
 
