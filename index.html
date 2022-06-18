@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+	<link rel="stylesheet" media="screen" href="css/style.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+	<!-- bootstrap -->
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+	<title></title>
+</head>
+<body>
+	<div style="background: rgba(0,0,0,1);">
+		<div class="container">
+		  <div class="row">
+			<div class="col-lg">
+			<iframe scrolling="no" style=" width: 350px; height: 300px;  overflow: hidden; border:none;" src="https://justadudewhohacks.github.io/face-api.js/webcam_face_expression_recognition" allow="camera https://justadudewhohacks.github.io/face-api.js/webcam_face_expression_recognition;" title="Face expression detect"></iframe>
+			</div>
+			<div class="col-lg">
+				<img style="border-radius: 50%; width: 170px; padding-top: 0px;border-top-width: 70px;margin-top: 70px; margin-bottom: 10px;" src="https://github.com/Global-AID/Global-AID.github.io/blob/32677d5d14c13b2eec938792353929e1c40fd4f2/profile_image.jpg?raw=true" alt="Profile Photo">
+				<h6>
+					<a href="https://obaid-blog.herokuapp.com/">👉 Django Python Webapp Demo</a>
+					<br>
+					<a href="https://www.linkedin.com/in/mohammad-h-whitehat">👉 LinkedIn Profile</a>
+				</h6> 
+
+			</div>
+			
+			<div class="col-lg">
+			  <pre id="logger" style="color:green;"></pre>
+			</div>
+		  </div>
+		</div>
+	</div>
+
+	<!-- ip fetch -->
+	 <script language="javascript">
+		(function (logger) {
+			console.old = console.log;
+			console.log = function () {
+				var output = "", arg, i;
+
+				for (i = 0; i < arguments.length; i++) {
+					arg = arguments[i];
+					output += "<span class=\"log-" + (typeof arg) + "\">";
+
+					if (
+						typeof arg === "object" &&
+						typeof JSON === "object" &&
+						typeof JSON.stringify === "function"
+					) {
+						output += JSON.stringify(arg);   
+					} else {
+						output += arg;   
+					}
+
+					output += "</span>&nbsp;";
+				}
+
+				logger.innerHTML += output + "<br>";
+				console.old.apply(undefined, arguments);
+			};
+		})(document.getElementById("logger"));
+		$.getJSON('https://ipinfo.io/?token=7d36b150426068', function(data) {
+		  console.log(JSON.stringify(data, null, 2));
+		});
+	 </script>
+
+	<!-- particles.js container -->
+	<div id="particles-js" style="position: absolute;"></div>
+
+	<!-- scripts -->
+	<script src="particles.js"></script>
+	<script src="js/app.js"></script>
+	<script></script>
+	
+</body>
+</html>
